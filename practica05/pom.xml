@@ -11,8 +11,8 @@
 	<groupId>mx.uv</groupId>
 	<artifactId>practica05</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>demo</name>
-	<description>Demo project for Spring Boot</description>
+	<name>practica05</name>
+	<description>ejemplo soap</description>
 	<properties>
 		<java.version>17</java.version>
 	</properties>
@@ -23,8 +23,8 @@
 		</dependency>
 
 		<dependency>
-			<groupId>wsdl4j</groupId>
-			<artifactId>wsdl4j</artifactId>
+  			<groupId>wsdl4j</groupId>
+  			<artifactId>wsdl4j</artifactId>
 		</dependency>
 
 		<dependency>
@@ -33,13 +33,18 @@
 			<version>2.3.0</version>
 		</dependency>
 
-
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
-	</dependencies>
+	
+   <dependency>
+     <groupId>org.scala-lang</groupId>
+     <artifactId>scala-library</artifactId>
+     <version>2.13.0</version>
+   </dependency>
+ </dependencies>
 
 	<build>
 		<plugins>
@@ -49,23 +54,23 @@
 			</plugin>
 
 			<plugin>
-				<groupId>org.codehaus.mojo</groupId>
-				<artifactId>jaxb2-maven-plugin</artifactId>
-				<version>3.1.0</version> <!--- genera paquetes javax -->
-				<executions>
-					<execution>
-					<id>xjc</id>
-					<goals>
-						<goal>xjc</goal>
-					</goals>
-					</execution>
-				</executions>
-				<configuration>
-					<sources>
-					<source>${project.basedir}/src/main/resources/saludos.xsd</source>
-					</sources>
-				</configuration>
-			</plugin>
+<groupId>org.codehaus.mojo</groupId>
+<artifactId>jaxb2-maven-plugin</artifactId>
+<version>2.5.0</version> <!--- genera paquetes javax -->
+<executions>
+<execution>
+<id>xjc</id>
+<goals>
+<goal>xjc</goal>
+</goals>
+</execution>
+</executions>
+<configuration>
+<sources>
+<source>${project.basedir}/src/main/resources/ESQUEMA.xsd</source>
+</sources>
+</configuration>
+</plugin>
 
 		</plugins>
 	</build>
